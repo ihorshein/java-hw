@@ -61,7 +61,7 @@ public class Main {
 
     List<Student> students = List.of(student1, student2, student3, student4);
 
-    record StudentGradeRecord(String studentName, String school, String subject, double score){
+    record StudentGradeRecord(String studentName, String school, String subject, double score) {
       @Override
       public String toString() {
         return studentName + ", " + school + ", " + subject + ", " + score;
