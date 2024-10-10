@@ -27,15 +27,4 @@ public class Student {
    * A nested field with information about the student’s address.
    */
   Address address;
-
-  @Override
-  public String toString() {
-    return "Student{" +
-      "name='" + name + '\'' +
-      ", age=" + age +
-      ", grades=" + grades +
-      ", school='" + school + '\'' +
-      ", address=" + address +
-      '}';
-  }
 }
