@@ -35,11 +35,7 @@ public class Solution {
 
       // Get the opening bracket from the closing one.
       Character openBracket = brackets.get(bracket);
-      if(openBracket == null) {
-        return false;
-      }
-
-      if(openBracket != sequence.pop()) {
+      if(openBracket == null || openBracket != sequence.pop()) {
         return false;
       }
     }
