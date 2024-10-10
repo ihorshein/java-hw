@@ -23,16 +23,19 @@ public class Solution {
     for(int i = 0; i < s.length(); i++) {
       char bracket = s.charAt(i);
 
-      boolean isOpen = brackets.containsValue(bracket);
-      if(isOpen)
+      if(brackets.containsValue(bracket))
       {
         sequence.push(s.charAt(i));
         continue;
       }
 
+      if(sequence.isEmpty()) {
+        return false;
+      }
+
       // Get the opening bracket from the closing one.
       Character openBracket = brackets.get(bracket);
-      if(openBracket == null || sequence.isEmpty()) {
+      if(openBracket == null) {
         return false;
       }
 
