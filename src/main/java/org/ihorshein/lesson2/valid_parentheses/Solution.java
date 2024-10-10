@@ -29,13 +29,8 @@ public class Solution {
         continue;
       }
 
-      if(sequence.isEmpty()) {
-        return false;
-      }
-
-      // Get the opening bracket from the closing one.
-      Character openBracket = brackets.get(bracket);
-      if(openBracket == null || openBracket != sequence.pop()) {
+      // Get the opening bracket from the closing.
+      if(sequence.isEmpty() || brackets.get(bracket) != sequence.pop()) {
         return false;
       }
     }
