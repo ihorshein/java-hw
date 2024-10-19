@@ -45,8 +45,7 @@ class Solution {
     example3();
   }
 
-  public static void example1()
-  {
+  public static void example1() {
     System.out.println("Example 1");
 
     ListNode listHead = new ListNode(1,
@@ -65,8 +64,7 @@ class Solution {
     _print(listHead);
   }
 
-  public static void example2()
-  {
+  public static void example2() {
     System.out.println("Example 2");
 
     ListNode listHead = new ListNode(1, new ListNode(2));
@@ -81,8 +79,7 @@ class Solution {
     _print(listHead);
   }
 
-  public static void example3()
-  {
+  public static void example3() {
     System.out.println("Example 3");
 
     ListNode listHead = new ListNode();

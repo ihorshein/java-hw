@@ -20,12 +20,9 @@ public class Solution {
 
     Stack<Character> sequence = new Stack<>();
 
-    for(int i = 0; i < s.length(); i++) {
-      char bracket = s.charAt(i);
-
-      if(brackets.containsValue(bracket))
-      {
-        sequence.push(s.charAt(i));
+    for(char bracket : s.toCharArray()) {
+      if(brackets.containsValue(bracket)) {
+        sequence.push(bracket);
         continue;
       }
 
@@ -46,40 +43,35 @@ public class Solution {
     example5();
   }
 
-  public static void example1()
-  {
+  public static void example1() {
     String s = "()";
 
     Solution solution = new Solution();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
-  public static void example2()
-  {
+  public static void example2() {
     String s = "()[]{}";
 
     Solution solution = new Solution();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
-  public static void example3()
-  {
+  public static void example3() {
     String s = "(]";
 
     Solution solution = new Solution();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
-  public static void example4()
-  {
+  public static void example4() {
     String s = "([])";
 
     Solution solution = new Solution();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
-  public static void example5()
-  {
+  public static void example5() {
     String s = ")[(]){}}";
 
     Solution solution = new Solution();

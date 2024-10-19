@@ -28,8 +28,7 @@ public class Solution {
     example2();
   }
 
-  public static void example1()
-  {
+  public static void example1() {
     Solution solution = new Solution();
 
     int[] nums = {0, 1, 0, 3, 12};
@@ -37,8 +36,7 @@ public class Solution {
     System.out.println(Arrays.toString(nums));
   }
 
-  public static void example2()
-  {
+  public static void example2() {
     Solution solution = new Solution();
 
     int[] nums = {0};
