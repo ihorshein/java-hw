@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
   public UserResponseDto registerUser(UserRegistrationDto userRegistrationDto) {
     UserValidator.checkRegistration(userRegistrationDto);
 
-    User userNew = this.userRepository.create(new User(
+    User userNew = userRepository.create(new User(
       null,
       userRegistrationDto.getEmail(),
       userRegistrationDto.getPhoneNumber(),
@@ -29,9 +29,9 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public UserResponseDto getUserById(Long userId) {
-    return this.userRepository
+    return userRepository
       .findById(userId)
-      .map((user) -> new UserResponseDto(user.getUserId(), user.getEmail(), user.getPhoneNumber()))
+      .map(user -> new UserResponseDto(user.getUserId(), user.getEmail(), user.getPhoneNumber()))
       .orElseThrow();
   }
 }
