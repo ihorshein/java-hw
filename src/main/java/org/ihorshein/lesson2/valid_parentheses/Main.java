@@ -4,12 +4,23 @@ import java.util.HashMap;
 import java.util.Stack;
 
 /**
- * https://leetcode.com/problems/valid-parentheses/description/
+ * <a href="https://leetcode.com/problems/valid-parentheses/description/">
+ *   Lesson 2 HW; Valid Parentheses
+ * </a>
  */
-public class Solution {
-  public boolean isValid(String s) {
-    if(s.isEmpty())
+public final class Main {
+  public static void main(String[] args) {
+    example1();
+    example2();
+    example3();
+    example4();
+    example5();
+  }
+
+  private boolean isValid(String s) {
+    if (s.isEmpty()) {
       return false;
+    }
 
     // key - close
     // value - open
@@ -20,14 +31,14 @@ public class Solution {
 
     Stack<Character> sequence = new Stack<>();
 
-    for(char bracket : s.toCharArray()) {
-      if(brackets.containsValue(bracket)) {
+    for (char bracket : s.toCharArray()) {
+      if (brackets.containsValue(bracket)) {
         sequence.push(bracket);
         continue;
       }
 
       // Get the opening bracket from the closing.
-      if(sequence.isEmpty() || brackets.get(bracket) != sequence.pop()) {
+      if (sequence.isEmpty() || brackets.get(bracket) != sequence.pop()) {
         return false;
       }
     }
@@ -35,46 +46,38 @@ public class Solution {
     return true;
   }
 
-  public static void main(String[] args) {
-    example1();
-    example2();
-    example3();
-    example4();
-    example5();
-  }
-
   public static void example1() {
     String s = "()";
 
-    Solution solution = new Solution();
+    Main solution = new Main();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
   public static void example2() {
     String s = "()[]{}";
 
-    Solution solution = new Solution();
+    Main solution = new Main();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
   public static void example3() {
     String s = "(]";
 
-    Solution solution = new Solution();
+    Main solution = new Main();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
   public static void example4() {
     String s = "([])";
 
-    Solution solution = new Solution();
+    Main solution = new Main();
     System.out.println(s + "  " + solution.isValid(s));
   }
 
   public static void example5() {
     String s = ")[(]){}}";
 
-    Solution solution = new Solution();
+    Main solution = new Main();
     System.out.println(s + "  " + solution.isValid(s));
   }
 }

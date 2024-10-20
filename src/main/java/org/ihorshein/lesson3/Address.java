@@ -1,18 +1,22 @@
 package org.ihorshein.lesson3;
 
-public class Address {
+class Address {
   /**
    * City name.
    */
-  String city;
+  private String city;
 
   /**
    * Street name.
    */
-  String street;
+  private String street;
 
-  public Address(String city, String street) {
+  Address(String city, String street) {
     this.city = city;
     this.street = street;
+  }
+
+  public String getCity() {
+    return city;
   }
 }

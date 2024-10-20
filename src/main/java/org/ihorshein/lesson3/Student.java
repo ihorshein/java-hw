@@ -2,29 +2,69 @@ package org.ihorshein.lesson3;
 
 import java.util.List;
 
-public class Student {
+class Student {
   /**
    * Name of the student.
    */
-  String name;
+  private String name;
 
   /**
    * Age of the student.
    */
-  int age;
+  private int age;
 
   /**
    * List of Grade objects, each representing the score in a subject.
    */
-  List<Grade> grades;
+  private List<Grade> grades;
 
   /**
    * The name of the school the student attends.
    */
-  String school;
+  private String school;
 
   /**
    * A nested field with information about the student’s address.
    */
-  Address address;
+  private Address address;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public List<Grade> getGrades() {
+    return grades;
+  }
+
+  public void setGrades(List<Grade> grades) {
+    this.grades = grades;
+  }
+
+  public String getSchool() {
+    return school;
+  }
+
+  public void setSchool(String school) {
+    this.school = school;
+  }
+
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(Address address) {
+    this.address = address;
+  }
 }

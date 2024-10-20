@@ -3,14 +3,21 @@ package org.ihorshein.lesson2.move_zeroes;
 import java.util.Arrays;
 
 /**
- * https://leetcode.com/problems/move-zeroes/description/
+ * <a href="https://leetcode.com/problems/move-zeroes/description/">
+ *   Lesson 2 HW; Move Zeroes
+ * </a>
  */
-public class Solution {
-  public void moveZeroes(int[] nums) {
+public final class Main {
+  public static void main(String[] args) {
+    example1();
+    example2();
+  }
+
+  private void moveZeroes(int[] nums) {
     int numberPosition = 0;
     for (int i = 0; i < nums.length; i++) {
-      if(nums[i] != 0) {
-        if(numberPosition != i) {
+      if (nums[i] != 0) {
+        if (numberPosition != i) {
           nums[numberPosition] = nums[i];
         }
 
@@ -18,18 +25,13 @@ public class Solution {
       }
     }
 
-    for(int i = numberPosition; i < nums.length; i++) {
+    for (int i = numberPosition; i < nums.length; i++) {
       nums[i] = 0;
     }
   }
 
-  public static void main(String[] args) {
-    example1();
-    example2();
-  }
-
   public static void example1() {
-    Solution solution = new Solution();
+    Main solution = new Main();
 
     int[] nums = {0, 1, 0, 3, 12};
     solution.moveZeroes(nums);
@@ -37,7 +39,7 @@ public class Solution {
   }
 
   public static void example2() {
-    Solution solution = new Solution();
+    Main solution = new Main();
 
     int[] nums = {0};
     solution.moveZeroes(nums);
