@@ -4,7 +4,6 @@ import org.ihorshein.lesson4.model.User;
 import org.ihorshein.lesson4.model.UserRegistrationDto;
 import org.ihorshein.lesson4.model.UserResponseDto;
 import org.ihorshein.lesson4.repository.UserRepository;
-import org.ihorshein.lesson4.repository.UserRepositoryMysql;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
