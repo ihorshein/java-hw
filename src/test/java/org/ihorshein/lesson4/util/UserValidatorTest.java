@@ -73,13 +73,13 @@ class UserValidatorTest {
     UserRegistrationDto userRegistrationDto = new UserRegistrationDto();
     userRegistrationDto.setEmail("john.doe@gmail.com");
     userRegistrationDto.setPhoneNumber("+38099937999a");
-    userRegistrationDto.setPassword("xxx");
-    userRegistrationDto.setPassword("xxy");
+    userRegistrationDto.setPassword("password");
+    userRegistrationDto.setPasswordRepeat("password");
 
     assertThrows(
       RuntimeException.class,
       () -> UserValidator.checkRegistration(userRegistrationDto),
-      "Password and repeat password do not match."
+      "Phone number is not valid."
     );
   }
 
