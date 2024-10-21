@@ -34,7 +34,7 @@ public abstract class RepositoryMysql {
   }
 
   public <T> Optional<T> findById(Class<T> entityClass, String sqlQuery) {
-    try(EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
+    try (EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
       return Optional.ofNullable(entityManager
         .createQuery(sqlQuery, entityClass)
         .getResultList()
@@ -43,7 +43,7 @@ public abstract class RepositoryMysql {
   }
 
   protected <T> T addDb(T entity) {
-    try(EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
+    try (EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
       transactionRun(entityManager::persist, entityManager, entity);
     }
 
@@ -51,7 +51,7 @@ public abstract class RepositoryMysql {
   }
 
   protected <T> T updateDb(T entity) {
-    try(EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
+    try (EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
       transactionRun(entityManager::merge, entityManager, entity);
     }
 

@@ -4,7 +4,7 @@ import org.ihorshein.lesson5.model.Role;
 
 import java.util.Optional;
 
-public class RoleRepositoryMysql extends RepositoryMysql implements RoleRepository{
+public class RoleRepositoryMysql extends RepositoryMysql implements RoleRepository {
   @Override
   public Role create(Role role) {
     return addDb(role);
