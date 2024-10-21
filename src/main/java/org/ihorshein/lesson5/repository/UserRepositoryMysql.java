@@ -17,6 +17,8 @@ public class UserRepositoryMysql extends RepositoryMysql implements UserReposito
 
   @Override
   public Optional<User> findById(Long id) {
-    return findById(User.class, "select tu from User tu join fetch tu.roles where tu.id=" + id);
+    return Optional.ofNullable(
+      find(User.class, "select tu from User tu join fetch tu.roles where tu.id=" + id)
+        .getFirst());
   }
 }

@@ -12,6 +12,8 @@ public class RoleRepositoryMysql extends RepositoryMysql implements RoleReposito
 
   @Override
   public Optional<Role> findById(Long id) {
-    return findById(Role.class, "select tr from Role tr where tr.id=" + id);
+    return Optional.ofNullable(
+      find(Role.class, "select tr from Role tr where tr.id=" + id)
+        .getFirst());
   }
 }

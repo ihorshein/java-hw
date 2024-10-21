@@ -5,7 +5,7 @@ import jakarta.persistence.EntityTransaction;
 import org.hibernate.exception.ConstraintViolationException;
 import org.ihorshein.lesson5.util.DbConnection;
 
-import java.util.Optional;
+import java.util.List;
 import java.util.function.Consumer;
 
 public abstract class RepositoryMysql {
@@ -33,12 +33,11 @@ public abstract class RepositoryMysql {
     }
   }
 
-  public <T> Optional<T> findById(Class<T> entityClass, String sqlQuery) {
+  public <T> List<T> find(Class<T> entityClass, String sqlQuery) {
     try (EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
-      return Optional.ofNullable(entityManager
+      return entityManager
         .createQuery(sqlQuery, entityClass)
-        .getResultList()
-        .getFirst());
+        .getResultList();
     }
   }
 
