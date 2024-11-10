@@ -19,7 +19,7 @@ public class UserRegistrationDto {
   /**
    * (required): Should be equal to {@link UserRegistrationDto#password}
    */
-  private String repeatPassword = "";
+  private String passwordRepeat = "";
 
   public String getEmail() {
     return email;
@@ -46,10 +46,10 @@ public class UserRegistrationDto {
   }
 
   public String getPasswordRepeat() {
-    return repeatPassword;
+    return passwordRepeat;
   }
 
   public void setPasswordRepeat(String repeatPassword) {
-    this.repeatPassword = repeatPassword;
+    this.passwordRepeat = repeatPassword;
   }
 }

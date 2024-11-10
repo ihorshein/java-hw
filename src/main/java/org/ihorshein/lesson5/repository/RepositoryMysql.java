@@ -9,11 +9,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public abstract class RepositoryMysql {
-  private <T> void transactionRun(Consumer<T> call, EntityManager entityManager, T entity) {
-    EntityTransaction transaction = null;
-
+  private <T> void transactionRun(Consumer<T> call, EntityTransaction transaction, T entity) {
     try {
-      transaction = entityManager.getTransaction();
       transaction.begin();
 
       call.accept(entity);
@@ -43,7 +40,7 @@ public abstract class RepositoryMysql {
 
   protected <T> T addDb(T entity) {
     try (EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
-      transactionRun(entityManager::persist, entityManager, entity);
+      transactionRun(entityManager::persist, entityManager.getTransaction(), entity);
     }
 
     return entity;
@@ -51,7 +48,7 @@ public abstract class RepositoryMysql {
 
   protected <T> T updateDb(T entity) {
     try (EntityManager entityManager = DbConnection.getMysqlFactory().createEntityManager()) {
-      transactionRun(entityManager::merge, entityManager, entity);
+      transactionRun(entityManager::merge, entityManager.getTransaction(), entity);
     }
 
     return entity;

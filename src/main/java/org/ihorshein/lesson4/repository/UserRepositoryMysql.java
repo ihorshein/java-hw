@@ -4,7 +4,12 @@ import org.ihorshein.lesson4.model.User;
 import org.ihorshein.lesson4.util.DbConnection;
 import org.ihorshein.lesson4.util.Hash;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Optional;
 
 public class UserRepositoryMysql implements UserRepository {

@@ -7,8 +7,8 @@ create table role (
 ) engine=InnoDB;
 
 create table user_role (
-    User_userId bigint not null,
-    roles_roleId bigint not null
+    userId bigint not null,
+    roleId bigint not null
 ) engine=InnoDB
 
 --rollback DROP TABLE role;
