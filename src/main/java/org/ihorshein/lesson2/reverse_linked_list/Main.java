@@ -5,6 +5,7 @@ package org.ihorshein.lesson2.reverse_linked_list;
  *   Lesson 2 HW; Reverse Linked List
  * </a>
  */
+@SuppressWarnings("checkstyle:MagicNumber")
 public final class Main {
   public static void main(String[] args) {
     example1();

@@ -8,6 +8,7 @@ import java.util.List;
  *   Lesson 3 HW
  * </a>
  */
+@SuppressWarnings("checkstyle:MagicNumber")
 public final class Main {
   public static void main(String[] args) {
     Address address1 = new Address("New York", "Street1");

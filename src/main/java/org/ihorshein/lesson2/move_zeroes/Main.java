@@ -7,6 +7,7 @@ import java.util.Arrays;
  *   Lesson 2 HW; Move Zeroes
  * </a>
  */
+@SuppressWarnings("checkstyle:MagicNumber")
 public final class Main {
   public static void main(String[] args) {
     example1();

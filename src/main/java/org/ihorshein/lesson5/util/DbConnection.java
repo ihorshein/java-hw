@@ -6,7 +6,7 @@ import lombok.Getter;
 
 public class DbConnection {
     @Getter
-    private static final EntityManagerFactory mysqlFactory = initMysqlFactory();
+    private static EntityManagerFactory mysqlFactory = initMysqlFactory();
 
     private static EntityManagerFactory initMysqlFactory() {
         try {

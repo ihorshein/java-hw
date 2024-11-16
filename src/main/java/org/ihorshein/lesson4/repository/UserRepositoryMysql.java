@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Optional;
 
+@SuppressWarnings("checkstyle:MagicNumber")
 public class UserRepositoryMysql implements UserRepository {
   @Override
   public User create(User user) {
